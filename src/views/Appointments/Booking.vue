@@ -21,7 +21,7 @@
 						{{ config.name }}
 					</h5>
 					<!-- Description needs to stay inline due to its whitespace -->
-					<span class="booking__description">{{ config.description }}</span>
+					<span class="booking__description" v-linkify="{ linkify: true, text: config.description }"></span>
 				</div>
 				<div class="booking__date-selection">
 					<h5 class="booking__date-header">
@@ -94,6 +94,7 @@ import {
 	NcGuestContent,
 	NcTimezonePicker as TimezonePicker,
 } from '@nextcloud/vue'
+import Linkify from '@nextcloud/vue/directives/Linkify'
 import { h } from 'vue'
 import MDILoading from 'vue-material-design-icons/Loading.vue'
 import AppointmentBookingConfirmation from '../../components/Appointments/AppointmentBookingConfirmation.vue'
@@ -112,6 +113,9 @@ function Loading(props) {
 
 export default {
 	name: 'Booking',
+	directives: {
+		Linkify,
+	},
 	components: {
 		AppointmentSlot,
 		Avatar,
