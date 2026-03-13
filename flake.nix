@@ -2,7 +2,7 @@
   description = "Calendar app for Nextcloud ";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.11";
   };
 
   outputs =
@@ -58,7 +58,7 @@
             pname = "nextcloud-calendar";
             version = "6.3.0";
 
-            npmDepsHash = "sha256-Kih7AJioA0QzbUVjzfsnUCqCclchT36mrDXR3/Er/SA=";
+            npmDepsHash = "sha256-Lgt8fQJgGCJa31GTu0Vqd/2StQxV7sjl0pis5DnFWx0=";
 
             src = builtins.path {
               path = ./.;
@@ -73,7 +73,7 @@
                 "--no-dev"
                 "-o"
               ];
-              vendorHash = "sha256-9fbOUkc43i3yflX8MAOVPDQCy6DfBaNceBXP2Eugq1w=";
+              vendorHash = "sha256-GMknGBXIe1l59vNkqpe9OMzc7at/YuFrs+rR2VTrC1c=";
               postBuild = ''
                 composer install --no-cache --no-interaction --no-progress --no-dev -o
               '';
